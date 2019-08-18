@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import * as firebase  from "firebase";
+import * as firebase from "firebase";
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
   constructor() { }
-  createNewUser(email: string, password: string, profil:string) {
+  createNewUser(email: string, password: string, profil: string) {
     return new Promise(
       (resolve, reject) => {
-        firebase.auth().createUserWithEmailAndPassword(email, password,).then(
+        firebase.auth().createUserWithEmailAndPassword(email, password).then(
           () => {
             resolve();
           },
@@ -20,7 +20,7 @@ export class AuthService {
       }
     );
   }
-  signInUser(email: string, password: string , profil:string) {
+  signInUser(email: string, password: string, profil: string) {
     return new Promise(
       (resolve, reject) => {
         firebase.auth().signInWithEmailAndPassword(email, password).then(

@@ -6,25 +6,16 @@
     <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="email">Adresse mail</label>
-        <input type="text"
-               id="email"
-               class="form-control"
-               formControlName="email">
+        <input type="text" id="email" class="form-control" formControlName="email">
       </div>
       <div class="form-group">
         <label for="password">Mot de passe</label>
-        <input type="password"
-               id="password"
-               class="form-control"
-               formControlName="password">
+        <input type="password" id="password" class="form-control" formControlName="password">
       </div>
 
       <div class="form-group">
         <label for="profil">profil</label>
-        <select   type="text"
-                  id="profil"
-                  class="form-control"
-                  formControlName="profil" >
+        <select type="text" id="profil" class="form-control" formControlName="profil">
           <option value="administrateur">administrateur</option>
           <option value="utilisateur">utilisateur</option>
           <option value="consultant">consultant</option>
@@ -33,9 +24,7 @@
       </div>
 
 
-      <button class="btn btn-primary"
-              type="submit"
-              [disabled]="signupForm.invalid">Créer mon compte</button>
+      <button class="btn btn-primary" type="submit" [disabled]="signupForm.invalid">Créer mon compte</button>
     </form>
     <p class="text-danger">{{ errorMessage }}</p>
   </div>
