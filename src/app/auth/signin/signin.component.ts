@@ -36,7 +36,14 @@ export class SigninComponent implements OnInit {
     this.authService.signInUser(email, password, profil).then(
 
       () => {
-        this.router.navigate(['/home']);
+        // this.router.navigate(['/home']);
+        if (profil === 'administrateur') {
+          this.router.navigate(['/homelist']);
+        } else if (profil === 'utilisateur') {
+          this.router.navigate(['/homelist2']);
+        } else if (profil === 'consultant') {
+          this.router.navigate(['/homelist3']);
+        }
       },
       (error) => {
         this.errorMessage = error;
