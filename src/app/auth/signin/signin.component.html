@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>       </title>
+  <meta charset="utf-8">
+</head>
+<body>
+<div><img src="https://www.bureau-emploi.tn/img/injaz-tunisia.org-injaz-tunisia-tunisie.JPG"></div> <br>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <h2>connexion</h2>
+    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Adresse mail</label>
+        <input type="text"
+               id="email"
+               class="form-control"
+               formControlName="email">
+      </div>
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password"
+               id="password"
+               class="form-control"
+               formControlName="password">
+      </div>
+
+      <div class="form-group">
+        <label for="profil">profil</label>
+        <select   type="text"
+                  id="profil"
+                  class="form-control"
+                  formControlName="profil" >
+          <option value="administrateur">administrateur</option>
+          <option value="utilisateur">utilisateur</option>
+          <option value="consultant">consultant</option>
+        </select>
+
+      </div>
+
+
+      <button class="btn btn-primary"
+              type="submit"
+              [disabled]="signInForm.invalid">connexion</button>
+    </form>
+    <p class="text-danger">{{ errorMessage }}</p>
+  </div>
+</div>
+</body>
+</html>
