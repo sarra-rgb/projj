@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AuthService} from "../../services/auth.service";
-import {Router} from "@angular/router";
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -25,7 +25,7 @@ export class SigninComponent implements OnInit {
     this.signInForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]],
-      profil :[ '', [Validators.required,Validators.pattern]]
+      profil: ['', [Validators.required, Validators.pattern]]
     });
   }
 
@@ -33,7 +33,7 @@ export class SigninComponent implements OnInit {
     const email = this.signInForm.get('email').value;
     const password = this.signInForm.get('password').value;
     const profil = this.signInForm.get('profil').value;
-    this.authService.signInUser(email, password,profil).then(
+    this.authService.signInUser(email, password, profil).then(
 
       () => {
         this.router.navigate(['/home']);
